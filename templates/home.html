@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventPlannerApp</title>
+  <meta charset="UTF-8">
+  <title>EventPlannerApp - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Welcome to EventPlannerApp!</h1>
-    <p>Plan events, upload images, and generate QR codes seamlessly.</p>
-    <a href="/event/testuser">Go to an event page</a>
+  <h1>Welcome to EventPlannerApp!</h1>
+  <p>Plan events, upload images, and generate QR codes seamlessly.</p>
+  <a href="{{ url_for('create_event') }}">Create a New Event</a>
 </body>
 </html>

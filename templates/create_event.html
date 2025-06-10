@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Event</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>Create Your Event</h1>
+  <form method="post">
+    <label for="event_name">Event Name:</label>
+    <input type="text" name="event_name" id="event_name" required>
+    <button type="submit">Generate QR Code</button>
+  </form>
+</body>
+</html>
