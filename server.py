@@ -18,7 +18,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def home():
-    return "Welcome to EventPlannerApp!"  # Correctly indented
+    return render_template('home.html')
 
 @app.route('/event/<name>', methods=['GET', 'POST'])
 def event(name):
