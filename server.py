@@ -22,6 +22,9 @@ def event(name):
         if 'file' not in request.files:
             return redirect(request.url)
         file = request.files['file']
+        @app.route('/')
+def home():
+    return "Welcome to EventPlannerApp!"
         if file.filename == '':
             return redirect(request.url)
         if file and allowed_file(file.filename):
