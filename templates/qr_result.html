@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generated</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Your QR Code is Ready!</h1>
+    <p>Scan this QR code to access your event:</p>
+    <img src="{{ qr_path }}" alt="Generated QR Code">
+    <a href="/">Back to Home</a>
+</body>
+</html>
