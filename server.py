@@ -16,15 +16,16 @@ def allowed_file(filename):
     """Check if the uploaded file's extension is allowed."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route('/')
+def home():
+    return "Welcome to EventPlannerApp!"  # Correctly indented
+
 @app.route('/event/<name>', methods=['GET', 'POST'])
 def event(name):
     if request.method == 'POST':
         if 'file' not in request.files:
             return redirect(request.url)
         file = request.files['file']
-        @app.route('/')
-        def home():
-        return "Welcome to EventPlannerApp!"
         if file.filename == '':
             return redirect(request.url)
         if file and allowed_file(file.filename):
@@ -35,8 +36,7 @@ def event(name):
     image_files = os.listdir(app.config['UPLOAD_FOLDER'])
     images = [os.path.join('static', 'uploads', image) for image in image_files]
     return render_template('event.html', name=name, images=images)
-    
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Ensure compatibility with Render
     app.run(host='0.0.0.0', port=port)
-
