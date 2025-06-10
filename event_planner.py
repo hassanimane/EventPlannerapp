@@ -1,9 +1,7 @@
-# event_planner.py
 import qrcode
 
-# Update this URL with your public or local URL.
-# For local testing, you might use: "http://127.0.0.1:5000/event/sara"
-url = "http://127.0.0.1:5000/event/sara"
+# Update this URL with your deployed app's public URL
+url = "https://eventplannerapp-942s.onrender.com"
 
 qr = qrcode.QRCode(
     version=1,
